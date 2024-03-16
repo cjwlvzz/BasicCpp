@@ -40,7 +40,7 @@ int main(int argc, char **argv)
     // 8 bytes 2.3E-308 to 1.7E+308
     double g = 5.5;
     //long double
-    // 16 bytes 3.4E-4932 to 1.1E+4932
+    // 16 bytes 3.4E-4932 to 1.1E+4932 
     long double h = 5.5;
 
     cout << "float size: " << sizeof(f) << endl;
@@ -53,6 +53,29 @@ int main(int argc, char **argv)
     // the ASCII value of a is 97
     cout << "ASCII value of a:"<< int(i) << endl;
     cout << "char size: " << sizeof(i) << endl;
+
+    //C style string
+    char j[] = "Hello";
+
+    //C++ style string
+    string k = "Hello";
+
+    cout << "C style string: " << j << endl;
+
+    //in old C++ compiler like VC++ 6.0, you can't use cout to print C++ style string unless you include string header file
+    //in modern C++ compiler like g++, you can use cout to print C++ style string without including string header file,because iostream header file includes string header file
+    cout << "C++ style string: " << k << endl;
+    
+    //define a boolean
+    bool l = true;
+
+    // the size of a boolean is 1 byte
+    cout << "boolean size: " << sizeof(l) << endl;
+
+    // boolean accually is a integer, 0 is false, 1 is true
+    cout << "boolean value: " << l << endl;
+    cout << "boolean value: " << !l << endl;
+
 
 
     return 0;
